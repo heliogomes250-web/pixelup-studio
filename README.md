@@ -8,7 +8,7 @@
 - Pixel com dúvidas, calculadora matemática e orçamento detalhado.
 - Formulário de orçamento inteligente.
 - WhatsApp configurado para +55 81 99144-0114.
-- Instagram configurado para https://www.instagram.com/arquivo_alpha1/
+- Instagram configurado para https://www.instagram.com/pixelup_studio1/
 - Barra fixa para celular com Pixel, Calculadora, Orçamento e WhatsApp.
 - Estrutura para Google Analytics: preencha GOOGLE_ANALYTICS_ID no HTML.
 - Endpoint /api/pixel para conectar um provedor real de IA sem expor a chave no navegador.
