@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PixelUp Studio | Design Gráfico, Social Media e Identidade Visual</title>
+<meta name="description" content="PixelUp Studio — Design gráfico, social media, identidade visual, criação de sites, artes digitais e materiais profissionais para empresas e empreendedores.">
+<meta name="keywords" content="design gráfico,social media,designer,criação de logo,identidade visual,arte para Instagram,post Instagram,banner,flyer,cartão de visita,criação de sites,PixelUp Studio">
+<meta name="theme-color" content="#0B0B0F">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+:root{
+--bg:#0B0B0F;--panel:#11131A;--panel2:#151823;--text:#F5F6FA;--muted:#93A7C4;
+--line:rgba(255,255,255,.105);--purple:#7C3AED;--blue:#2563EB;--cyan:#11C9DF;--green:#25D366;
+--grad:linear-gradient(100deg,#7C3AED,#5D6AF3 48%,#2563EB);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(900px 520px at 70% -5%,rgba(124,58,237,.18),transparent 68%),
+radial-gradient(750px 500px at 16% 44%,rgba(37,99,235,.06),transparent 65%),var(--bg);
+color:var(--text);font-family:Manrope,Arial,sans-serif;line-height:1.5;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(rgba(255,255,255,.75) .45px,transparent .45px);background-size:5px 5px;mix-blend-mode:soft-light}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}
+.container{width:min(1400px,calc(100% - 60px));margin:auto}
+.section{padding:105px 0;content-visibility:auto;contain-intrinsic-size:850px}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;color:#9E82FF;font:500 11px 'DM Mono';letter-spacing:4px;text-transform:uppercase}
+.eyebrow:before,.eyebrow:after{content:"";width:38px;height:1px;background:#7550F0}
+h1,h2,h3{font-family:Sora,Manrope,sans-serif}
+.section-head{text-align:center;max-width:1000px;margin:0 auto 55px}
+.section-title{font-size:clamp(42px,5vw,64px);line-height:1.03;letter-spacing:-3px;margin:18px 0 20px}
+.gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-lead{color:var(--muted);font-size:18px;line-height:1.75;margin:auto;max-width:900px}
+
+header{position:sticky;top:0;z-index:100;background:rgba(9,10,15,.87);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{min-height:84px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:13px;min-width:210px}
+.brandmark{width:38px;height:38px;display:grid;grid-template-columns:repeat(3,7px);grid-auto-rows:7px;gap:3px}
+.brandmark i{background:#6946EE;border-radius:1px}.brandmark i:nth-child(3){background:var(--cyan)}
+.brandtext b{display:block;font:800 20px/1 Sora;letter-spacing:-.8px}.brandtext small{display:block;color:#C8CFDC;font:500 9px/1 'DM Mono';letter-spacing:4px;margin-top:5px}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:25px;flex:1}
+.navlinks a{font:500 12px 'DM Mono';letter-spacing:1.8px;color:#BAC2D2;white-space:nowrap}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 24px;border:1px solid transparent;font-weight:800;cursor:pointer;transition:.25s}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 12px 30px rgba(80,46,210,.24)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:#101219;border-color:var(--line);color:#fff}
+.nav-cta{white-space:nowrap}.menu-btn{display:none;margin-left:auto;background:#12141B;color:#fff;border:1px solid var(--line);border-radius:12px;width:44px;height:44px}
+.mobile-nav{display:none}
+
+.hero{content-visibility:visible;min-height:810px;display:grid;place-items:center;position:relative;text-align:center;overflow:hidden}
+.hero-glow{position:absolute;top:70px;width:900px;height:540px;background:radial-gradient(circle,rgba(124,58,237,.22),transparent 66%);filter:blur(20px);border-radius:50%}
+.hero-content{position:relative;z-index:2}.hero h1{font-size:clamp(56px,8vw,96px);letter-spacing:-5px;line-height:.97;max-width:1150px;margin:20px auto 25px}
+.hero p{font-size:20px;line-height:1.75;color:#9FB2CC;max-width:850px;margin:auto}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:35px 0 50px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:auto}.stat{padding:18px 14px;background:rgba(17,19,26,.78);border:1px solid var(--line);border-radius:18px}.stat strong{font-size:13px}.stat small{display:block;margin-top:5px;color:#64758E;font:500 10px 'DM Mono';letter-spacing:1.7px}
+
+.why-grid,.services-grid,.packages,.process-grid,.testimonial-grid,.design-grid,.portfolio-grid{display:grid;gap:20px}
+.why-grid{grid-template-columns:repeat(4,1fr)}.services-grid{grid-template-columns:repeat(3,1fr)}
+.reason,.service-card,.package,.process-card,.testimonial,.design-card,.quote-card{background:linear-gradient(145deg,rgba(19,21,29,.97),rgba(11,13,19,.97));border:1px solid var(--line);border-radius:22px;box-shadow:inset 0 1px rgba(255,255,255,.02)}
+.reason{padding:28px;min-height:225px}.reason:hover,.service-card:hover,.package:hover{border-color:rgba(124,58,237,.38);transform:translateY(-3px);transition:.25s}
+.icon,.svc-icon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;color:#AF98FF;background:rgba(124,58,237,.13);border:1px solid rgba(124,58,237,.34);font-size:20px}
+.reason h3{font-size:18px;margin:20px 0 8px}.reason p{margin:0;color:#8599B6;font-size:14px;line-height:1.7}
+.service-card{padding:27px;min-height:325px;display:flex;flex-direction:column}
+.service-card{padding:0;overflow:hidden}
+.service-photo{height:145px;overflow:hidden;background:#11131A;position:relative}
+.service-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,9,13,0) 38%,rgba(8,9,13,.75) 100%)}
+.service-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9)}
+.service-card-body{padding:24px 27px 27px;display:flex;flex-direction:column;min-height:280px}
+
+.svc-kicker{color:#8F78F6;font:500 10px 'DM Mono';letter-spacing:2.3px;margin:18px 0 0}.service-card h3{margin:9px 0 9px;font-size:20px}.service-card p{color:#8298B6;font-size:14px;line-height:1.7;margin:0}
+.svc-bottom{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;align-items:end}.svc-bottom span{font-size:12px;color:#66758D}.svc-bottom strong{font:800 23px Sora}.text-btn{border:0;background:none;color:#B7A4FF;font-weight:800;cursor:pointer;padding:12px 0 0;text-align:left}.text-btn b{display:inline-block;margin-left:6px}.price-note{text-align:center;color:#667992;font-size:13px;margin-top:22px}
+
+.price-groups{display:grid;grid-template-columns:1fr 1fr;gap:20px}.price-group{background:#11131A;border:1px solid var(--line);border-radius:20px;overflow:hidden}.price-group-title{padding:16px 22px;background:rgba(124,58,237,.07);font:500 11px 'DM Mono';letter-spacing:2.4px;color:#9D83FF;border-bottom:1px solid var(--line)}.price-row{display:flex;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line);color:#9EB0CA}.price-row strong{color:#fff}
+
+.packages{grid-template-columns:repeat(3,1fr)}.package{padding:31px;position:relative;overflow:hidden}.package.popular{border-color:#6B48DF;box-shadow:0 25px 65px rgba(68,31,175,.16)}.badge{position:absolute;right:16px;top:16px;color:#D1C6FF;background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.35);padding:7px 10px;border-radius:999px;font:500 9px 'DM Mono';letter-spacing:1.6px}.package h3{font-size:23px;margin:7px 0}.package .money{font:800 43px Sora;letter-spacing:-2px;margin:12px 0 24px}.package ul{margin:0;padding-left:18px;color:#8FA4C2;display:grid;gap:10px}.package .btn{width:100%;margin-top:27px}.design-grid{grid-template-columns:repeat(3,1fr)}.design-card{padding:27px}.design-card h3{margin:7px 0 0}.design-card .money{font:800 34px Sora;margin:18px 0}.design-card p{color:#8195B2;font-size:14px}
+
+.portfolio-grid{grid-template-columns:repeat(3,1fr)}.portfolio-card{position:relative;min-height:360px;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:#101219;cursor:pointer;transition:.25s}.portfolio-card:hover{transform:translateY(-3px);border-color:#6140D4}.portfolio-img{height:360px;overflow:hidden}.portfolio-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}.portfolio-meta{position:absolute;inset:auto 0 0;padding:20px 20px 18px;background:linear-gradient(180deg,transparent,rgba(7,8,11,.95));min-height:135px;display:flex;flex-direction:column;justify-content:end}.portfolio-meta span{font:500 10px 'DM Mono';letter-spacing:2.2px;color:#A98DFF}.portfolio-meta h3{font-size:17px;margin:8px 0 0}.zoom{position:absolute;right:16px;bottom:16px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(18,20,27,.82);color:#fff}
+
+.process-grid{grid-template-columns:repeat(4,1fr)}.process-card{padding:28px;min-height:230px}.num{font:800 42px Sora;color:#9E8AFF}.process-card h3{font-size:17px;margin:21px 0 8px}.process-card p{color:#869BB9;margin:0;line-height:1.7}.process-card:not(:last-child){position:relative}.process-card:not(:last-child):after{content:"";position:absolute;top:69px;right:-20px;width:20px;height:1px;background:linear-gradient(90deg,#6845DD,#315FDE)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.about-copy .eyebrow{justify-content:flex-start}.about-copy h2{font-size:clamp(44px,5vw,63px);line-height:1.04;letter-spacing:-3px;margin:18px 0 30px}.about-copy p{font-size:18px;line-height:1.8;color:#8FA6C3}.about-card{min-height:430px;padding:50px;border:1px solid #6746DB;background:linear-gradient(rgba(25,28,39,.72),rgba(25,28,39,.72)),linear-gradient(90deg,transparent 49.5%,rgba(255,255,255,.07) 50%,transparent 50.5%);background-size:auto,55px 55px}.about-mark{font-size:58px;color:#6C49F1}.about-card h3{font-size:34px;letter-spacing:-1.5px;margin:23px 0 8px}.mono{color:#6B7892;font:500 10px 'DM Mono';letter-spacing:5px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:#B9C3D3;font:500 10px 'DM Mono';letter-spacing:1.5px}
+
+.testimonial-grid{grid-template-columns:repeat(3,1fr)}.testimonial{padding:30px;min-height:270px}.quote-mark{font-size:48px;color:#7746EE}.testimonial p{font-size:17px;color:#91A5C1;font-style:italic;line-height:1.65}.person{border-top:1px solid var(--line);padding-top:18px;margin-top:25px;font-weight:800}.person small{display:block;margin-top:4px;color:#536A89;font:500 9px 'DM Mono';letter-spacing:1.8px}
+
+.calc{display:grid;grid-template-columns:1fr 1fr;border:1px solid #6242D5;border-radius:28px;overflow:hidden;background:#10131A}.calc-left,.calc-right{padding:44px}.calc-right{background:linear-gradient(145deg,#18142A,#121627);border-left:1px solid var(--line)}label{display:block;color:#8196B5;font:500 10px 'DM Mono';letter-spacing:2.6px;margin-bottom:9px}input,textarea,select{width:100%;background:#0B0D12;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:15px;outline:none}textarea{resize:vertical}.counter{display:flex;gap:11px;align-items:center;margin:16px 0 30px}.counter button,.counter span{width:58px;height:54px;border-radius:14px;border:1px solid var(--line);background:#0B0D12;color:#fff;display:grid;place-items:center;font-weight:800}.counter button{cursor:pointer;font-size:20px}.counter span{width:108px}.urgency{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0 8px}.urgency button{padding:14px;border-radius:14px;border:1px solid var(--line);background:#0B0D12;color:#fff;cursor:pointer;font-weight:800}.urgency button.active{background:var(--grad);border-color:transparent}.urgent{font-size:12px;color:#8895AA;margin:8px 0 25px}.summary{display:flex;justify-content:space-between;gap:15px;padding:18px 0;border-bottom:1px solid var(--line);color:#7E91AD}.summary strong{color:#fff}.total-label{font:500 10px 'DM Mono';letter-spacing:3px;color:#7184A1;margin-top:27px}.total{font:800 55px Sora;color:#9D88FF;letter-spacing:-3px;margin:3px 0 22px}
+
+.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:start}.quote-copy .eyebrow{justify-content:flex-start}.quote-copy h2{font-size:clamp(44px,5vw,63px);line-height:1.04;letter-spacing:-3px;margin:17px 0 20px}.quote-copy p{color:#8FA6C3;font-size:18px;line-height:1.75}.contact{padding:20px;border:1px solid var(--line);border-radius:18px;margin-top:17px;display:flex;gap:15px;align-items:center;background:#11131A}.contact-icon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;color:#25D366;border:1px solid rgba(37,211,102,.28);background:rgba(37,211,102,.08)}.contact-icon.insta{color:#A68EFF;border-color:rgba(124,58,237,.35);background:rgba(124,58,237,.1)}.contact span{color:#607697;font-size:13px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.full{grid-column:1/-1}.form-actions{display:flex;justify-content:flex-end;margin-top:18px}.success{display:none;padding:13px 15px;margin-top:16px;border-radius:12px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.25);color:#9BE7BB}.success.show{display:block}
+
+.faq{max-width:930px;margin:auto}details{border-bottom:1px solid var(--line)}summary{list-style:none;cursor:pointer;padding:23px 0;font-weight:800;font-size:18px;display:flex;justify-content:space-between}summary::-webkit-details-marker{display:none}summary:after{content:"⌄";color:#8295AE}details[open] summary:after{transform:rotate(180deg)}details p{color:#8197B5;line-height:1.75;margin:0 0 22px}
+
+footer{padding:82px 0 28px;border-top:1px solid var(--line)}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:50px}.footer-desc{color:#8199B7;line-height:1.75;max-width:340px;margin-top:18px}.footer-title{color:#6C80A0;font:500 10px 'DM Mono';letter-spacing:3.5px;margin-bottom:17px}.footer-link{display:block;color:#8EA3C0;margin:10px 0}.socials{display:flex;gap:10px;margin-top:20px}.social{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}.copyright{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:50px;padding-top:21px;color:#506783;font-size:12px}
+
+.float{position:fixed;bottom:20px;z-index:90;display:flex;align-items:center;gap:10px}.float.ai{left:20px}.float.wa{right:20px}.float-label{padding:10px 15px;border-radius:999px;border:1px solid var(--line);background:rgba(11,13,18,.94);font-weight:800}.float-btn{width:68px;height:68px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;color:#fff;font-size:25px;cursor:pointer}
+.float-btn svg{width:32px;height:32px;display:block;flex:none;transform:none;overflow:visible}
+.chat-avatar svg{width:27px;height:27px;display:block}
+.float.ai{left:22px;bottom:22px}
+.float.wa{right:22px;bottom:22px}
+.float-label{padding:11px 17px;border-radius:999px;border:1px solid var(--line);background:rgba(12,14,20,.96);font-weight:800;white-space:nowrap}
+.ai-btn{box-shadow:0 0 0 12px rgba(92,49,205,.11),0 14px 36px rgba(61,27,161,.35)}
+.wa-btn{box-shadow:0 0 0 12px rgba(37,211,102,.09),0 14px 38px rgba(22,135,72,.25)}
+.ai-btn{background:var(--grad);box-shadow:0 0 0 12px rgba(95,50,221,.11)}.wa-btn{background:var(--green);box-shadow:0 0 0 12px rgba(37,211,102,.08)}
+
+
+.pixel-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:#0B0D12}
+.pixel-tab{padding:11px 6px;border:0;border-right:1px solid var(--line);background:transparent;color:#7285A0;cursor:pointer;font:500 10px 'DM Mono';letter-spacing:1.4px}
+.pixel-tab:last-child{border-right:0}
+.pixel-tab.active{color:#fff;background:rgba(124,58,237,.12);box-shadow:inset 0 -2px #7C3AED}
+.pixel-panel{display:none;flex:1;min-height:0;flex-direction:column}
+.pixel-panel.active{display:flex}
+.pixel-scroll{padding:18px;overflow:auto}
+.pixel-title{font:700 18px Sora;color:#fff;margin-bottom:4px}
+.pixel-help{color:#7E93AF;font-size:12px;margin:0 0 17px}
+.pixel-calc-display{font:700 28px Sora;text-align:right;letter-spacing:1px;background:#0A0C11}
+.calc-keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:13px}
+.calc-keypad button{height:44px;border-radius:12px;border:1px solid var(--line);background:#141721;color:#fff;cursor:pointer;font-weight:800}
+.calc-keypad button:hover{border-color:#6645D7;background:#1A1830}
+.calc-keypad .equal{grid-column:1/-1;background:var(--grad);border:0}
+.pixel-result{display:flex;justify-content:space-between;align-items:center;margin-top:15px;padding:14px 15px;border:1px solid var(--line);border-radius:14px;background:#12151D}
+.pixel-result span{font:500 10px 'DM Mono';letter-spacing:2px;color:#7286A4}.pixel-result strong{font:800 23px Sora;color:#A68FFF}
+.pixel-tip{font-size:11px;color:#5E7390;margin-top:10px;line-height:1.5}
+.pixel-label{display:block;margin:13px 0 7px;color:#7287A3;font:500 9px 'DM Mono';letter-spacing:2px}
+.pixel-two{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.pixel-add,.pixel-send{width:100%;margin-top:13px;border:0;border-radius:13px;padding:12px;background:var(--grad);color:#fff;font-weight:800;cursor:pointer}
+.pixel-clear{width:100%;margin-top:8px;border:1px solid var(--line);border-radius:13px;padding:10px;background:#10131A;color:#9BAECB;cursor:pointer;font-size:12px}
+.pixel-budget-list{margin-top:15px;border-top:1px solid var(--line)}
+.pixel-empty{padding:15px 0;color:#5E7390;font-size:12px;text-align:center}
+.pixel-item{padding:12px 0;border-bottom:1px solid var(--line)}
+.pixel-item-top{display:flex;justify-content:space-between;gap:10px}
+.pixel-item-top b{font-size:12px}.pixel-remove{border:0;background:none;color:#F77B91;cursor:pointer;font-size:11px}
+.pixel-item-meta{color:#7185A2;font-size:11px;margin-top:4px}.pixel-item-note{color:#8EA1BB;font-size:10px;margin-top:4px}
+.pixel-budget-summary{margin-top:14px;border-top:1px solid var(--line)}
+.pixel-budget-summary>div{display:flex;justify-content:space-between;padding:9px 0;color:#8295AE;font-size:12px}
+.pixel-budget-summary strong{color:#fff}.pixel-total-line{border-top:1px solid var(--line);font-weight:800}.pixel-total-line strong{color:#A68FFF;font:800 20px Sora}
+
+.chat{position:fixed;left:20px;bottom:96px;width:420px;height:585px;background:#0E1016;border:1px solid var(--line);border-radius:22px;z-index:95;display:none;flex-direction:column;overflow:hidden;box-shadow:0 35px 90px rgba(0,0,0,.5)}.chat.open{display:flex}.chat-head{padding:17px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}.chat-avatar{width:48px;height:48px;border-radius:14px;background:var(--grad);display:grid;place-items:center}.chat-head b{display:block}.chat-head small{display:block;color:#6E819D;font:500 9px 'DM Mono';letter-spacing:2px;margin-top:3px}.chat-close{margin-left:auto;width:38px;height:38px;border-radius:50%;background:none;border:1px solid var(--line);color:#fff;cursor:pointer}.chat-body{flex:1;overflow:auto;padding:18px}.bubble{max-width:89%;padding:14px 16px;border-radius:16px;background:#1C1F27;color:#E9EAF1;line-height:1.6;margin-bottom:11px}.bubble.user{margin-left:auto;background:linear-gradient(135deg,#39206F,#1E4C9D)}.suggestions{display:flex;flex-wrap:wrap;gap:7px}.suggestions button{border:1px solid var(--line);background:#12151C;color:#B9C7DD;border-radius:999px;padding:8px 10px;font-size:11px;cursor:pointer}.chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}.chat-form input{border-radius:999px}.chat-form button{width:48px;height:48px;border-radius:50%;border:0;background:var(--grad);color:#fff;cursor:pointer}
+
+.lightbox{position:fixed;inset:0;background:rgba(4,5,8,.87);backdrop-filter:blur(7px);z-index:200;display:none;align-items:center;justify-content:center;padding:25px}.lightbox.open{display:flex}.lb-inner{width:min(1050px,100%);position:relative}.lb-inner img{width:100%;max-height:78vh;object-fit:contain;border-radius:20px;border:1px solid var(--line)}.lb-close{position:absolute;right:0;top:-46px;width:40px;height:40px;border-radius:50%;background:#11131A;color:#fff;border:1px solid var(--line);cursor:pointer}.lb-cap{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:12px}.lb-cap h3{margin:5px 0 0}
+
+@media(max-width:1180px){.navlinks{gap:16px}.navlinks a{font-size:10px}.why-grid,.process-grid{grid-template-columns:repeat(2,1fr)}.services-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.container{width:min(100% - 30px,680px)}.nav{min-height:72px}.navlinks,.nav-cta{display:none}.menu-btn{display:block}.mobile-nav{position:absolute;top:72px;left:0;right:0;background:#0C0E14;border-bottom:1px solid var(--line);padding:15px}.mobile-nav.open{display:block}.mobile-nav a{display:block;padding:12px 0;color:#C2CAD7;font:500 11px 'DM Mono';letter-spacing:1.8px}.mobile-nav .btn{width:100%;margin-top:8px}.hero{min-height:700px}.hero h1{font-size:48px;letter-spacing:-3px}.hero p{font-size:17px}.stats{grid-template-columns:1fr 1fr}.why-grid,.process-grid,.services-grid,.packages,.design-grid,.portfolio-grid,.testimonial-grid,.about-grid,.quote-grid,.calc{grid-template-columns:1fr}.process-card:not(:last-child):after{display:none}.calc-right{border-left:0;border-top:1px solid var(--line)}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column}.float-label{display:none}.chat{width:calc(100% - 30px);left:15px;height:550px}}
+@media(max-width:520px){.pixel-two{grid-template-columns:1fr}.section{padding:78px 0}.hero h1{font-size:43px}.stats,.footer-grid{grid-template-columns:1fr}.portfolio-img{height:300px}.portfolio-card{min-height:300px}.service-photo{height:135px}.calc-left,.calc-right,.quote-card{padding:24px}.total{font-size:45px}}
+
+/* CONTROLES FLUTUANTES — Pixel e WhatsApp */
+#chatOpen{
+  display:grid !important;position:relative !important;visibility:visible !important;opacity:1 !important;
+  place-items:center !important;width:68px !important;height:68px !important;border-radius:50% !important;
+}
+#chatOpen svg{width:34px !important;height:34px !important}
+#chatOpen::after{
+  content:"";position:absolute;right:4px;top:4px;width:11px;height:11px;border-radius:50%;
+  background:#25D366;border:2px solid #171925;
+}
+.float.ai,.float.wa{
+  position:fixed !important;display:flex !important;visibility:visible !important;opacity:1 !important;
+  z-index:2147483000 !important;
+}
+.float.ai{left:20px !important;bottom:20px !important}
+.float.wa{right:20px !important;bottom:20px !important}
+.float.ai .float-label,.float.wa .float-label{
+  display:block !important;visibility:visible !important;opacity:1 !important;
+}
+.float-btn.wa-btn{
+  display:grid !important;visibility:visible !important;opacity:1 !important;
+  place-items:center !important;width:68px !important;height:68px !important;
+  border-radius:50% !important;background:#20D873 !important;color:#fff !important;
+}
+.float-btn.wa-btn svg{width:34px !important;height:34px !important;display:block !important}
+.float-btn.ai-btn{
+  background:linear-gradient(100deg,#7C3AED,#5D6AF3 48%,#2563EB) !important;color:#fff !important;
+}
+@media(max-width:820px){
+  .float.ai{left:14px !important;bottom:14px !important}
+  .float.wa{right:14px !important;bottom:14px !important}
+}
+@media(max-width:520px){
+  .float-btn,.float-btn.wa-btn,#chatOpen{width:60px !important;height:60px !important}
+  #chatOpen svg,.float-btn.wa-btn svg{width:29px !important;height:29px !important}
+  #chatOpen::after{right:2px;top:2px;width:10px;height:10px}
+}
+
+
+.pixel-hint{
+  position:fixed;left:20px;bottom:99px;z-index:2147482999;max-width:330px;
+  padding:13px 16px;border-radius:16px;background:#12151D;border:1px solid rgba(124,58,237,.35);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);cursor:pointer;color:#EDEEF6
+}
+.pixel-hint b{display:block;font-size:13px}.pixel-hint span{display:block;color:#8799B3;font-size:11px;margin-top:4px;line-height:1.45}
+@media(max-width:820px){.pixel-hint{left:14px;bottom:86px;max-width:280px}}
+@media(max-width:520px){.pixel-hint{bottom:82px;font-size:10px}.pixel-hint span{font-size:10px}}
+
+
+.mobile-bottom-bar{display:none}
+@media(max-width:820px){
+  body{padding-bottom:78px}
+  .mobile-bottom-bar{position:fixed;left:10px;right:10px;bottom:10px;height:62px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;z-index:2147482998;padding:5px;border:1px solid var(--line);border-radius:18px;background:rgba(11,13,18,.96);backdrop-filter:blur(18px);box-shadow:0 20px 55px rgba(0,0,0,.38)}
+  .mobile-bottom-bar a,.mobile-bottom-bar button{border:0;background:transparent;color:#8396B3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:13px;cursor:pointer;text-decoration:none}
+  .mobile-bottom-bar a:hover,.mobile-bottom-bar button:hover{color:#fff;background:rgba(124,58,237,.1)}
+  .mobile-bottom-bar span{font-size:17px;line-height:1}.mobile-bottom-bar b{font:500 8px 'DM Mono';letter-spacing:1px}
+}
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:title" content="PixelUp Studio | Design Gráfico, Social Media e Identidade Visual">
+<meta property="og:description" content="Design gráfico, social media, identidade visual, edição de imagens e criação de sites.">
+<meta property="og:site_name" content="PixelUp Studio">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0B0F'/%3E%3Crect x='14' y='14' width='10' height='10' fill='%237C3AED'/%3E%3Crect x='27' y='14' width='10' height='10' fill='%237C3AED'/%3E%3Crect x='40' y='14' width='10' height='10' fill='%2311C9DF'/%3E%3Crect x='14' y='27' width='10' height='10' fill='%237C3AED'/%3E%3Crect x='27' y='27' width='10' height='10' fill='%237C3AED'/%3E%3Crect x='14' y='40' width='10' height='10' fill='%237C3AED'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"PixelUp Studio",
+  "description":"Design gráfico, social media, identidade visual, edição de imagens, materiais para impressão e criação de sites.",
+  "slogan":"Sua ideia. Nosso design.",
+  "sameAs":["https://www.instagram.com/arquivo_alpha1/"],
+  "areaServed":"Brasil",
+  "priceRange":"R$"
+}
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio">
+      <span class="brandmark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="brandtext"><b>PIXELUP</b><small>STUDIO</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#inicio">INÍCIO</a><a href="#servicos">SERVIÇOS</a><a href="#precos">PREÇOS</a><a href="#pacotes">PACOTES</a><a href="#portfolio">PORTFÓLIO</a><a href="#processo">COMO FUNCIONA</a><a href="#sobre">SOBRE</a><a href="#faq">FAQ</a><a href="#orcamento">ORÇAMENTO</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#orcamento">PEDIR ORÇAMENTO</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#inicio">INÍCIO</a><a href="#servicos">SERVIÇOS</a><a href="#precos">PREÇOS</a><a href="#pacotes">PACOTES</a><a href="#portfolio">PORTFÓLIO</a><a href="#processo">COMO FUNCIONA</a><a href="#sobre">SOBRE</a><a href="#faq">FAQ</a><a href="#orcamento">ORÇAMENTO</a>
+    <a class="btn btn-primary" href="#orcamento">PEDIR ORÇAMENTO</a>
+  </nav>
+</header>
+
+<section class="hero section" id="inicio">
+  <div class="hero-glow"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">PIXELUP STUDIO</div>
+    <h1>Sua ideia merece um <span class="gradient">design incrível.</span></h1>
+    <p>A PixelUp Studio transforma ideias em artes profissionais para empresas, lojas, empreendedores e profissionais que querem se destacar.</p>
+    <div class="hero-actions"><a class="btn btn-ghost" href="#servicos">VER SERVIÇOS</a><a class="btn btn-primary" href="#orcamento">PEDIR ORÇAMENTO</a></div>
+    <div class="stats">
+      <div class="stat"><strong>Design profissional</strong><small>VISUAL SOB MEDIDA</small></div>
+      <div class="stat"><strong>Atendimento personalizado</strong><small>COMUNICAÇÃO DIRETA</small></div>
+      <div class="stat"><strong>Arquivos em alta qualidade</strong><small>ARQUIVOS PRONTOS</small></div>
+      <div class="stat"><strong>Orçamento rápido</strong><small>RESPOSTA OBJETIVA</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="porque">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">POR QUE PIXELUP?</div><h2 class="section-title">Design pensado para <span class="gradient">destacar sua marca.</span></h2></div>
+    <div class="why-grid">
+      <article class="reason"><div class="icon">✦</div><h3>Design personalizado</h3><p>Cada projeto é desenvolvido de acordo com a necessidade do cliente.</p></article>
+      <article class="reason"><div class="icon">◈</div><h3>Qualidade</h3><p>Artes preparadas para uso digital e impressão.</p></article>
+      <article class="reason"><div class="icon">✧</div><h3>Criatividade</h3><p>Soluções visuais modernas e estratégicas.</p></article>
+      <article class="reason"><div class="icon">◎</div><h3>Atendimento</h3><p>Comunicação simples e acompanhamento durante o projeto.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">SERVIÇOS</div><h2 class="section-title">Nossos <span class="gradient">serviços</span></h2><p class="section-lead">Soluções completas em design gráfico, social media, identidade visual, edição de imagens e criação de sites.</p></div>
+    <div class="services-grid" id="servicesGrid"></div>
+    <div class="price-note">Os valores apresentados são preços iniciais e podem variar de acordo com a complexidade do projeto.</div>
+  </div>
+</section>
+
+<section class="section" id="precos">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">PREÇOS</div><h2 class="section-title">Preço inicial de cada <span class="gradient">serviço.</span></h2><p class="section-lead">Valores transparentes para você ter uma referência antes de solicitar seu orçamento.</p></div>
+    <div class="price-groups" id="priceGroups"></div>
+    <div class="price-note">Serviços não listados poderão ser avaliados mediante orçamento. Projetos urgentes poderão possuir taxa adicional.</div>
+  </div>
+</section>
+
+<section class="section" id="pacotes">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">PACOTES SOCIAL MEDIA</div><h2 class="section-title">Escolha o pacote <span class="gradient">ideal para sua empresa.</span></h2></div>
+  <div class="packages">
+   <article class="package"><div class="svc-kicker">START</div><h3>Pacote Start</h3><div class="money">R$ 150<span style="font:600 14px Manrope;color:#687994">/mês</span></div><ul><li>6 posts</li><li>4 stories</li><li>Artes personalizadas</li><li>Identidade visual básica</li><li>Arquivos prontos para publicação</li></ul><a href="#orcamento" class="btn btn-ghost" data-package="Start">QUERO O START</a></article>
+   <article class="package popular"><div class="badge">MAIS POPULAR</div><div class="svc-kicker">PROFISSIONAL</div><h3>Pacote Profissional</h3><div class="money">R$ 280<span style="font:600 14px Manrope;color:#687994">/mês</span></div><ul><li>12 posts</li><li>8 stories</li><li>2 carrosséis</li><li>Artes promocionais</li><li>Identidade visual</li><li>Planejamento visual</li></ul><a href="#orcamento" class="btn btn-primary" data-package="Profissional">QUERO O PROFISSIONAL</a></article>
+   <article class="package"><div class="svc-kicker">PREMIUM</div><h3>Pacote Premium</h3><div class="money">R$ 450<span style="font:600 14px Manrope;color:#687994">/mês</span></div><ul><li>20 posts</li><li>12 stories</li><li>4 carrosséis</li><li>Artes promocionais</li><li>Templates personalizados</li><li>Planejamento visual</li><li>Atendimento prioritário</li></ul><a href="#orcamento" class="btn btn-ghost" data-package="Premium">QUERO O PREMIUM</a></article>
+  </div>
+  <div style="margin-top:48px"><div class="section-head" style="margin-bottom:25px"><div class="eyebrow">PACOTES DE DESIGN</div></div>
+   <div class="design-grid">
+    <article class="design-card"><div class="svc-kicker">START</div><h3>Pacote Start</h3><div class="money">R$ 120</div><p>5 posts • 2 stories • 1 arte promocional</p></article>
+    <article class="design-card"><div class="svc-kicker">EMPRESA</div><h3>Pacote Empresa</h3><div class="money">R$ 250</div><p>10 posts • 5 stories • 2 banners • 1 flyer • 1 arte promocional</p></article>
+    <article class="design-card"><div class="svc-kicker">COMPLETO</div><h3>Pacote Completo</h3><div class="money">R$ 400</div><p>15 posts • 8 stories • 3 banners • 2 flyers • 2 carrosséis • 1 catálogo simples</p></article>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="portfolio">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">PORTFÓLIO</div><h2 class="section-title">Projetos que <span class="gradient">inspiram.</span></h2><p class="section-lead">Galeria demonstrativa. Substitua estas imagens pelos trabalhos reais da PixelUp Studio quando quiser.</p></div>
+  <div class="portfolio-toolbar" id="filters">
+   <button class="filter-btn active" data-filter="TODOS">TODOS</button><button class="filter-btn" data-filter="SOCIAL MEDIA">SOCIAL MEDIA</button><button class="filter-btn" data-filter="LOGOTIPOS">LOGOTIPOS</button><button class="filter-btn" data-filter="IDENTIDADE VISUAL">IDENTIDADE VISUAL</button><button class="filter-btn" data-filter="BANNERS">BANNERS</button><button class="filter-btn" data-filter="FLYERS">FLYERS</button><button class="filter-btn" data-filter="EMPRESAS">EMPRESAS</button><button class="filter-btn" data-filter="EVENTOS">EVENTOS</button><button class="filter-btn" data-filter="SITES">SITES</button><button class="filter-btn" data-filter="EDIÇÃO DE IMAGENS">EDIÇÃO DE IMAGENS</button>
+  </div>
+  <div class="portfolio-grid" id="portfolioGrid"></div>
+ </div>
+</section>
+
+<section class="section" id="processo">
+ <div class="container"><div class="section-head"><div class="eyebrow">COMO FUNCIONA</div><h2 class="section-title">Do pedido à entrega em <span class="gradient">4 etapas.</span></h2></div>
+  <div class="process-grid">
+   <article class="process-card"><div class="num">01</div><h3>VOCÊ SOLICITA</h3><p>Conte o que precisa.</p></article>
+   <article class="process-card"><div class="num">02</div><h3>RECEBE O ORÇAMENTO</h3><p>Analisamos o projeto e informamos preço e prazo.</p></article>
+   <article class="process-card"><div class="num">03</div><h3>DESENVOLVEMOS</h3><p>Criamos o material de acordo com o briefing.</p></article>
+   <article class="process-card"><div class="num">04</div><h3>VOCÊ RECEBE</h3><p>Entregamos os arquivos finais prontos para utilização.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="sobre">
+ <div class="container about-grid">
+  <div class="about-copy"><div class="eyebrow">SOBRE</div><h2>Sobre a <span class="gradient">PixelUp Studio</span></h2><p>A PixelUp Studio nasceu com o propósito de transformar ideias em comunicação visual profissional.</p><p>Trabalhamos com design gráfico, social media, identidade visual, materiais digitais, impressão, edição de imagens e criação de sites.</p><p>Cada projeto é desenvolvido buscando unir criatividade, qualidade e uma comunicação visual que valorize o negócio do cliente.</p></div>
+  <div class="about-card"><div class="about-mark">▦</div><h3>Sua ideia. <span class="gradient">Nosso design.</span></h3><div class="mono">PIXELUP STUDIO</div><div class="chips"><span class="chip">CRIATIVIDADE</span><span class="chip">TECNOLOGIA</span><span class="chip">PROFISSIONALISMO</span><span class="chip">QUALIDADE</span></div></div>
+ </div>
+</section>
+
+<section class="section" id="depoimentos">
+ <div class="container"><div class="section-head"><div class="eyebrow">DEPOIMENTOS</div><h2 class="section-title">O que dizem sobre <span class="gradient">nós.</span></h2><p class="section-lead">Espaço reservado para depoimentos reais de clientes. Nenhuma avaliação fictícia é exibida.</p></div>
+  <div class="testimonial-grid">
+   <article class="testimonial"><div class="quote-mark">”</div><p>Seu depoimento pode aparecer aqui.</p><div class="person">Cliente PixelUp Studio<small>NOME, EMPRESA E FOTO AQUI</small></div></article>
+   <article class="testimonial"><div class="quote-mark">”</div><p>Seu depoimento pode aparecer aqui.</p><div class="person">Cliente PixelUp Studio<small>NOME, EMPRESA E FOTO AQUI</small></div></article>
+   <article class="testimonial"><div class="quote-mark">”</div><p>Seu depoimento pode aparecer aqui.</p><div class="person">Cliente PixelUp Studio<small>NOME, EMPRESA E FOTO AQUI</small></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="calculadora">
+ <div class="container"><div class="section-head"><div class="eyebrow">ORÇAMENTO AUTOMÁTICO</div><h2 class="section-title">Calcule seu <span class="gradient">orçamento.</span></h2><p class="section-lead">Selecione o serviço, informe a quantidade e receba uma estimativa na hora — direto no seu WhatsApp.</p></div>
+  <div class="calc">
+   <div class="calc-left">
+    <label>TIPO DE SERVIÇO</label><select id="calcService"></select>
+    <label style="margin-top:26px">QUANTIDADE</label><div class="counter"><button type="button" id="minus">−</button><span id="qty">5</span><button type="button" id="plus">+</button></div>
+    <label>PRECISA PARA QUANDO?</label><div class="urgency"><button type="button" id="normalBtn" class="active">Prazo normal</button><button type="button" id="urgentBtn">Urgente</button></div>
+    <div id="urgentText" class="urgent" style="display:none">Projetos com prazo reduzido poderão ter taxa de urgência.</div>
+    <label>OBSERVAÇÕES (OPCIONAL)</label><textarea id="calcObs" rows="4" placeholder="Ex.: cores da marca, data do evento..."></textarea>
+   </div>
+   <div class="calc-right">
+    <label>RESUMO DA ESTIMATIVA</label>
+    <div class="summary"><span>SERVIÇO</span><strong id="sumService"></strong></div>
+    <div class="summary"><span>QUANTIDADE</span><strong id="sumQty"></strong></div>
+    <div class="summary"><span>VALOR UNITÁRIO</span><strong id="sumUnit"></strong></div>
+    <div class="summary"><span>SUBTOTAL</span><strong id="sumSub"></strong></div>
+    <div class="total-label">TOTAL ESTIMADO</div><div class="total" id="sumTotal"></div>
+    <button class="btn btn-primary" id="sendEstimate" style="width:100%">ENVIAR ORÇAMENTO PELO WHATSAPP</button><button class="btn btn-ghost" id="continueEstimate" style="width:100%;margin-top:9px">CONTINUAR NO FORMULÁRIO</button>
+    <div class="total-label" style="text-align:center;margin-top:16px">ESTIMATIVA SUJEITA À CONFIRMAÇÃO</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="orcamento">
+ <div class="container quote-grid">
+  <div class="quote-copy"><div class="eyebrow">ORÇAMENTO</div><h2>Peça seu orçamento <span class="gradient">agora.</span></h2><p>Conte sobre seu projeto e receba preço e prazo. Sem compromisso.</p>
+   <div class="contact"><div class="contact-icon">◉</div><div><strong>Falar pelo WhatsApp</strong><br><span>Resposta rápida em horário comercial</span></div></div>
+   <div class="contact"><div class="contact-icon insta">◎</div><div><strong>Instagram</strong><br><span>Veja nossos trabalhos no feed</span></div></div>
+  </div>
+  <form class="quote-card" id="quoteForm">
+   <div class="form-grid">
+    <div><label>NOME *</label><input id="name" required placeholder="Seu nome"></div>
+    <div><label>WHATSAPP *</label><input id="phone" required placeholder="(00) 00000-0000"></div>
+    <div><label>E-MAIL *</label><input id="email" type="email" required placeholder="voce@email.com"></div>
+    <div><label>EMPRESA</label><input id="company" placeholder="Nome da sua empresa"></div>
+    <div><label>SERVIÇO DESEJADO *</label><select id="wanted" required></select></div>
+    <div><label>QUANTIDADE</label><input id="formQty" type="number" min="1" value="1"></div>
+    <div><label>PRAZO</label><select id="deadline"><option>Prazo normal</option><option>Urgente</option></select></div>
+    <div><label>REFERÊNCIA</label><input id="reference" placeholder="Link, @perfil ou observação"></div>
+    <div class="full"><label>DESCRIÇÃO DO PROJETO</label><textarea id="description" rows="5" placeholder="Conte o que você precisa: objetivo, estilo, textos, cores..."></textarea></div>
+    <div class="full"><label>UPLOAD DE ARQUIVO</label><input type="file" id="upload" accept=".jpg,.jpeg,.png,.pdf,.zip"></div>
+   </div>
+   <div class="form-actions"><button class="btn btn-primary" type="submit">SOLICITAR ORÇAMENTO</button></div>
+   <div class="success" id="success">Obrigado! Sua solicitação foi recebida. A PixelUp Studio analisará seu projeto e entrará em contato.</div>
+  </form>
+ </div>
+</section>
+
+<section class="section" id="faq">
+ <div class="container"><div class="section-head"><div class="eyebrow">FAQ</div><h2 class="section-title">Perguntas <span class="gradient">frequentes.</span></h2></div>
+  <div class="faq">
+   <details><summary>Qual o prazo de entrega?</summary><p>O prazo varia de acordo com o tipo e complexidade do projeto. O prazo será informado junto ao orçamento.</p></details>
+   <details><summary>Posso enviar uma referência?</summary><p>Sim. Referências ajudam a entender melhor o estilo desejado.</p></details>
+   <details><summary>Quantas alterações estão incluídas?</summary><p>A quantidade de alterações deverá ser definida de acordo com cada serviço e orçamento.</p></details>
+   <details><summary>Os arquivos são entregues em alta qualidade?</summary><p>Sim. Os arquivos finais serão preparados de acordo com a finalidade do projeto.</p></details>
+   <details><summary>Vocês fazem artes para impressão?</summary><p>Sim. Criamos materiais preparados para impressão.</p></details>
+   <details><summary>Vocês criam logotipos?</summary><p>Sim. Trabalhamos com criação de logotipos e identidade visual.</p></details>
+   <details><summary>Como funciona o pagamento?</summary><p>As condições de pagamento serão informadas no orçamento antes do início do projeto.</p></details>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div>
+    <a class="brand" href="#inicio"><span class="brandmark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="brandtext"><b>PIXELUP</b><small>STUDIO</small></span></a>
+    <p class="footer-desc">"Sua ideia. Nosso design."<br>Estúdio criativo de design gráfico e serviços digitais.</p>
+    <div class="socials"><a class="social" href="#" data-instagram>◎</a><a class="social" href="#" data-whatsapp>◉</a><a class="social" href="#" data-email>✉</a></div>
+   </div>
+   <div><div class="footer-title">SERVIÇOS</div><a class="footer-link" href="#servicos">Design Gráfico</a><a class="footer-link" href="#servicos">Social Media</a><a class="footer-link" href="#servicos">Identidade Visual</a><a class="footer-link" href="#servicos">Criação de Sites</a></div>
+   <div><div class="footer-title">LINKS</div><a class="footer-link" href="#inicio">Início</a><a class="footer-link" href="#servicos">Serviços</a><a class="footer-link" href="#precos">Preços</a><a class="footer-link" href="#pacotes">Pacotes</a><a class="footer-link" href="#portfolio">Portfólio</a><a class="footer-link" href="#orcamento">Orçamento</a><a class="footer-link" href="#faq">FAQ</a></div>
+   <div><div class="footer-title">CONTATO</div><a class="footer-link" href="#" data-instagram>Instagram</a><a class="footer-link" href="#" data-whatsapp>WhatsApp</a><a class="footer-link" href="#" data-email>E-mail</a></div>
+  </div>
+  <div class="copyright"><span>© 2026 PixelUp Studio. Todos os direitos reservados.</span><span>SUA IDEIA. NOSSO DESIGN.</span></div>
+ </div>
+</footer>
+
+<div class="chat" id="chat">
+ <div class="chat-head">
+   <div class="chat-avatar">✦</div>
+   <div><b>Pixel</b><small>● ASSISTENTE ONLINE</small></div>
+   <button class="chat-close" id="chatClose">×</button>
+ </div>
+
+ <div class="pixel-tabs">
+   <button class="pixel-tab active" data-tab="duvidas">Dúvidas</button>
+   <button class="pixel-tab" data-tab="calculo">Calculadora</button>
+   <button class="pixel-tab" data-tab="orcamento">Orçamento</button>
+ </div>
+
+ <div class="pixel-panel active" id="tab-duvidas">
+   <div class="chat-body" id="chatBody">
+     <div class="bubble">Olá! Eu sou o <b>Pixel</b>. Posso tirar dúvidas, fazer cálculos e montar um orçamento detalhado para você.</div>
+     <div class="suggestions">
+       <button>Quanto custa um post?</button>
+       <button>Quais serviços vocês fazem?</button>
+       <button>Como funciona o orçamento?</button>
+     </div>
+   </div>
+   <div class="chat-form">
+     <input id="chatInput" placeholder="Digite sua dúvida...">
+     <button id="chatSend">➤</button>
+   </div>
+ </div>
+
+ <div class="pixel-panel" id="tab-calculo">
+   <div class="pixel-scroll">
+     <div class="pixel-title">Calculadora rápida</div>
+     <p class="pixel-help">Faça contas sem sair do assistente.</p>
+     <input id="pixelCalcDisplay" class="pixel-calc-display" inputmode="decimal" placeholder="0">
+     <div class="calc-keypad">
+       <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button data-key="/">÷</button>
+       <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button data-key="*">×</button>
+       <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="-">−</button>
+       <button data-key="0">0</button><button data-key=".">.</button><button id="pixelCalcClear">C</button><button data-key="+">+</button>
+       <button class="equal" id="pixelCalcEqual">=</button>
+     </div>
+     <div class="pixel-result"><span>Resultado</span><strong id="pixelCalcResult">0</strong></div>
+     <div class="pixel-tip" id="pixelCalcExamples">Exemplos: 1x4 = 4 • 10% de 250 = 25 • (20+5)*3 = 75.<br>Dica: você também pode digitar a conta diretamente no campo.</div>
+   </div>
+ </div>
+
+ <div class="pixel-panel" id="tab-orcamento">
+   <div class="pixel-scroll">
+     <div class="pixel-title">Orçamento detalhado</div>
+     <p class="pixel-help">Adicione vários serviços, quantidades e prazo.</p>
+
+     <label class="pixel-label">SERVIÇO</label>
+     <select id="pixelBudgetService"></select>
+
+     <div class="pixel-two">
+       <div><label class="pixel-label">QUANTIDADE</label><input id="pixelBudgetQty" type="number" min="1" value="1"></div>
+       <div><label class="pixel-label">PRAZO</label>
+         <select id="pixelBudgetDeadline"><option value="normal">Prazo normal</option><option value="urgent">Urgente</option></select>
+       </div>
+     </div>
+
+     <label class="pixel-label">OBSERVAÇÃO DO ITEM</label>
+     <input id="pixelBudgetNote" placeholder="Ex.: 5 artes para promoção">
+
+     <button class="pixel-add" id="pixelAddItem">+ Adicionar ao orçamento</button>
+
+     <div class="pixel-budget-list" id="pixelBudgetList">
+       <div class="pixel-empty">Nenhum serviço adicionado ainda.</div>
+     </div>
+
+     <div class="pixel-budget-summary">
+       <div><span>Subtotal</span><strong id="pixelBudgetSubtotal">R$ 0,00</strong></div>
+       <div><span>Acréscimo de urgência</span><strong id="pixelBudgetUrgency">R$ 0,00</strong></div>
+       <div class="pixel-total-line"><span>Total estimado</span><strong id="pixelBudgetTotal">R$ 0,00</strong></div>
+     </div>
+
+     <button class="pixel-send" id="pixelSendBudget">ENVIAR ORÇAMENTO DETALHADO PELO WHATSAPP</button>
+     <button class="pixel-clear" id="pixelClearBudget">Limpar orçamento</button>
+   </div>
+ </div>
+</div>
+
+<div class="pixel-hint" id="pixelHint" onclick="document.getElementById('chatOpen').click()">
+  <b>Olá! Eu sou o Pixel 👋</b>
+  <span>Posso tirar dúvidas, fazer cálculos e montar seu orçamento.</span>
+</div>
+
+<div class="float ai"><span class="float-label">Tirar dúvidas</span><button class="float-btn ai-btn" id="chatOpen" aria-label="Abrir Pixel"><svg viewBox="0 0 32 32" aria-hidden="true">
+<rect x="8" y="10" width="16" height="13" rx="4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+<path d="M16 6v4M12 16h.01M20 16h.01M12 20h8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+<circle cx="16" cy="4.5" r="1.3" fill="currentColor"/>
+<path d="M6 15v4M26 15v4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+</svg></button></div>
+<div class="float wa"><span class="float-label">Fale conosco</span><a class="float-btn wa-btn" href="#" data-whatsapp aria-label="Abrir WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  <path d="M10.8 26.1l1.5-4.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+  <path d="M12.2 12.1c.25-.55.52-.58.94-.58h.78c.23 0 .5.13.61.43l.94 2.23c.11.27.08.53-.11.76l-.73.82c.74 1.34 1.77 2.34 3.16 3.09l.81-.68c.22-.19.49-.23.76-.1l2.16 1.03c.29.14.42.34.36.67-.2 1.14-.92 1.77-2.03 1.91-2.34.3-6.87-2.27-8.17-5.36-.64-1.53-.48-3.36.52-4.22Z" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg></a></div>
+
+
+<div class="mobile-bottom-bar">
+  <button data-mobile-pixel><span>✦</span><b>PIXEL</b></button>
+  <a href="#calculadora"><span>▣</span><b>CALCULAR</b></a>
+  <a href="#orcamento"><span>✎</span><b>ORÇAMENTO</b></a>
+  <a href="#" data-whatsapp><span>◉</span><b>WHATSAPP</b></a>
+</div>
+
+<div class="lightbox" id="lightbox">
+ <div class="lb-inner"><button class="lb-close" id="lbClose">×</button><img id="lbImg" alt=""><div class="lb-cap"><div><div class="svc-kicker" id="lbCat"></div><h3 id="lbTitle"></h3></div><a class="btn btn-primary" href="#orcamento" id="lbCta">QUERO UM PROJETO ASSIM</a></div></div>
+</div>
+
+<script>
+const CONFIG = {
+  WHATSAPP: "5581991440114",
+  INSTAGRAM: "https://www.instagram.com/arquivo_alpha1/",
+  EMAIL: "[SEU EMAIL]",
+  AI_ENDPOINT: "/api/pixel",
+  GOOGLE_ANALYTICS_ID: ""
+};
+
+const SERVICES = [{"name": "SOCIAL MEDIA", "items": [{"name": "Post para Instagram/Facebook", "price": 25}, {"name": "Story", "price": 20}, {"name": "Carrossel até 5 páginas", "price": 60}, {"name": "Carrossel até 10 páginas", "price": 90}, {"name": "Arte promocional", "price": 30}, {"name": "Arte para oferta", "price": 30}]}, {"name": "DESIGN GRÁFICO", "items": [{"name": "Flyer digital", "price": 35}, {"name": "Banner digital", "price": 40}, {"name": "Panfleto", "price": 35}, {"name": "Cartaz", "price": 50}, {"name": "Convite digital", "price": 35}, {"name": "Cardápio digital", "price": 80}, {"name": "Catálogo digital", "price": 100}]}, {"name": "IDENTIDADE VISUAL", "items": [{"name": "Logotipo", "price": 150}, {"name": "Logo Premium", "price": 250}, {"name": "Identidade Visual", "price": 450}, {"name": "Identidade Visual Premium", "price": 700}]}, {"name": "MATERIAIS EMPRESARIAIS", "items": [{"name": "Cartão de visita", "price": 40}, {"name": "Papel timbrado", "price": 40}, {"name": "Assinatura de e-mail", "price": 35}, {"name": "Apresentação profissional", "price": 100}, {"name": "Catálogo de produtos", "price": 120}, {"name": "Tabela de preços", "price": 50}]}, {"name": "ARTES PARA IMPRESSÃO", "items": [{"name": "Folder", "price": 70}, {"name": "Panfleto", "price": 50}, {"name": "Faixa", "price": 80}, {"name": "Outdoor", "price": 100}, {"name": "Adesivo", "price": 40}, {"name": "Etiqueta", "price": 40}, {"name": "Embalagem", "price": 100}, {"name": "Rótulo", "price": 70}]}, {"name": "EDIÇÃO DE IMAGENS", "items": [{"name": "Remoção de fundo", "price": 15}, {"name": "Tratamento de foto", "price": 20}, {"name": "Melhoria de qualidade", "price": 25}, {"name": "Restauração de foto", "price": 30}, {"name": "Remoção de objetos", "price": 25}, {"name": "Montagem", "price": 30}, {"name": "Edição profissional", "price": 40}]}, {"name": "CRIAÇÃO DE SITES", "items": [{"name": "Landing page", "price": 350}, {"name": "Site institucional", "price": 600}, {"name": "Site profissional", "price": 900}, {"name": "Loja virtual", "price": 1500}]}];
+const PORTFOLIO = [["SITES", "Landing page responsiva", "laptop.jpg"], ["EMPRESAS", "Embalagem e rótulo", "serum.jpg"], ["SOCIAL MEDIA", "Carrossel para redes sociais", "social.jpg"], ["EVENTOS", "Pôster de festa neon", "poster.jpg"], ["EMPRESAS", "Cartões de visita", "cards.jpg"], ["EDIÇÃO DE IMAGENS", "Tratamento profissional de foto", "photo.jpg"], ["BANNERS", "Banner digital promocional", "banner.jpg"], ["SOCIAL MEDIA", "Arte para story de oferta", "story.jpg"], ["FLYERS", "Flyer para evento", "flyer.jpg"]];
+
+const brl = v => Number(v||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const whatsapp = text => {
+  const n = CONFIG.WHATSAPP.replace(/\D/g,"");
+  track("whatsapp_click",{location:"site"}); window.open("https://wa.me/"+n+"?text="+encodeURIComponent(text),"_blank","noopener");
+};
+
+function track(event, params={}){
+  try{if(window.gtag) window.gtag("event",event,params);}catch{}
+}
+if(CONFIG.GOOGLE_ANALYTICS_ID){
+  const s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(CONFIG.GOOGLE_ANALYTICS_ID);document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};
+  gtag("js",new Date());gtag("config",CONFIG.GOOGLE_ANALYTICS_ID);
+}
+
+
+document.querySelectorAll("[data-whatsapp]").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    whatsapp("Olá! Conheci a PixelUp Studio pelo site e gostaria de solicitar um orçamento.");
+  });
+});
+document.querySelectorAll("[data-instagram]").forEach(el=>{
+  el.addEventListener("click",e=>{e.preventDefault();track("instagram_click",{location:"site"}); window.open(CONFIG.INSTAGRAM,"_blank","noopener");});
+});
+document.querySelectorAll("[data-email]").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    if(CONFIG.EMAIL.startsWith("[")) alert("Configure o e-mail no início do código.");
+    else location.href="mailto:"+CONFIG.EMAIL;
+  });
+});
+
+document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileNav").classList.toggle("open"));
+document.querySelectorAll("#mobileNav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("mobileNav").classList.remove("open")));
+
+const SERVICE_IMAGES = {"SOCIAL MEDIA": "social.jpg", "DESIGN GRÁFICO": "banner.jpg", "IDENTIDADE VISUAL": "serum.jpg", "MATERIAIS EMPRESARIAIS": "cards.jpg", "ARTES PARA IMPRESSÃO": "flyer.jpg", "EDIÇÃO DE IMAGENS": "photo.jpg", "CRIAÇÃO DE SITES": "laptop.jpg"};
+document.getElementById("servicesGrid").innerHTML = SERVICES.map(s=>{
+  const min = Math.min(...s.items.map(i=>i.price));
+  const icons = {"SOCIAL MEDIA":"✦","DESIGN GRÁFICO":"◆","IDENTIDADE VISUAL":"◇","MATERIAIS EMPRESARIAIS":"▦","ARTES PARA IMPRESSÃO":"⬡","EDIÇÃO DE IMAGENS":"◌","CRIAÇÃO DE SITES":"⌁"};
+  const image = SERVICE_IMAGES[s.name] || "social.webp";
+  const defaultItem = s.items[0]?.name || "Outro";
+  return `<article class="service-card">
+    <div class="service-photo"><img src="assets/${image.replace(/\.jpg$/i,".webp")}" alt="${s.name}" loading="lazy" decoding="async"></div>
+    <div class="service-card-body">
+      <div class="svc-icon">${icons[s.name]||"✦"}</div>
+      <div class="svc-kicker">${s.name}</div>
+      <h3>${s.name.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase())}</h3>
+      <p>${s.description}</p>
+      <div class="svc-bottom"><span>A partir de</span><strong>${brl(min)}</strong></div>
+      <button class="text-btn" data-quote data-service="${defaultItem}">Solicitar orçamento <b>→</b></button>
+    </div>
+  </article>`;
+}).join("");
+
+document.getElementById("priceGroups").innerHTML = SERVICES.map(s=>{
+  return `<div class="price-group"><div class="price-group-title">${s.name}</div>`+
+    s.items.map(i=>`<div class="price-row"><span>${i.name}</span><strong>${brl(i.price)}</strong></div>`).join("")+
+    `</div>`;
+}).join("");
+
+document.getElementById("portfolioGrid").innerHTML = PORTFOLIO.map((p,i)=>`
+  <article class="portfolio-card" data-cat="${p[0]}" data-title="${p[1]}" data-img="assets/${p[2]}" tabindex="0">
+    <div class="portfolio-img"><img src="assets/${p[2].replace(/\.jpg$/i, ".webp")}" alt="${p[1]}" loading="lazy" decoding="async"></div>
+    <div class="portfolio-meta"><span>${p[0]}</span><h3>${p[1]}</h3><button class="zoom">↗</button></div>
+  </article>
+`).join("");
+
+
+function selectQuoteService(serviceName){
+  const sel=document.getElementById("wanted");
+  if(!sel || !serviceName) return;
+  const opt=[...sel.options].find(o=>o.value===serviceName);
+  if(opt) sel.value=serviceName;
+}
+function openQuoteWithService(serviceName, quantity){
+  selectQuoteService(serviceName);
+  if(quantity) document.getElementById("formQty").value=Math.max(1,Number(quantity)||1);
+  document.getElementById("orcamento").scrollIntoView({behavior:"smooth"});
+  if(typeof track==="function") track("quote_start",{service:serviceName||"not_set"});
+}
+document.querySelectorAll("[data-quote]").forEach(b=>b.addEventListener("click",()=>openQuoteWithService(b.dataset.service||"",1)));
+document.querySelectorAll("[data-package]").forEach(b=>b.addEventListener("click",()=>track("package_click",{package:b.dataset.package})));
+document.querySelectorAll("a[href='#orcamento']").forEach(a=>a.addEventListener("click",()=>{if(typeof track==="function")track("quote_cta",{location:"site"})}));
+
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const f=btn.dataset.filter;
+    document.querySelectorAll(".portfolio-card").forEach(card=>card.style.display=(f==="TODOS"||card.dataset.cat===f)?"":"none");
+  });
+});
+
+const calcService=document.getElementById("calcService");
+const wanted=document.getElementById("wanted");
+function options(){return `<option value="" data-price="0">Selecione o serviço</option>`+
+  SERVICES.flatMap(s=>s.items.map(i=>`<option value="${i.name}" data-price="${i.price}">${i.name}</option>`)).join("")+
+  `<option value="Outro" data-price="0">Outro</option>`;}
+calcService.innerHTML=options(); wanted.innerHTML=options();
+
+let qty=5, urgent=false;
+function updateCalc(){
+  const o=calcService.options[calcService.selectedIndex];
+  const unit=Number(o?.dataset.price||0), label=o?.value||"Outro", subtotal=unit*qty, total=urgent?subtotal*1.25:subtotal;
+  document.getElementById("qty").textContent=qty;
+  document.getElementById("sumService").textContent=label;
+  document.getElementById("sumQty").textContent=qty;
+  document.getElementById("sumUnit").textContent=brl(unit);
+  document.getElementById("sumSub").textContent=brl(subtotal);
+  document.getElementById("sumTotal").textContent=brl(total);
+}
+calcService.addEventListener("change",updateCalc);
+document.getElementById("minus").addEventListener("click",()=>{qty=Math.max(1,qty-1);updateCalc()});
+document.getElementById("plus").addEventListener("click",()=>{qty++;updateCalc()});
+document.getElementById("normalBtn").addEventListener("click",()=>{urgent=false;normalBtn.classList.add("active");urgentBtn.classList.remove("active");urgentText.style.display="none";updateCalc()});
+document.getElementById("urgentBtn").addEventListener("click",()=>{urgent=true;urgentBtn.classList.add("active");normalBtn.classList.remove("active");urgentText.style.display="block";updateCalc()});
+document.getElementById("continueEstimate").addEventListener("click",()=>{
+  const o=calcService.options[calcService.selectedIndex];
+  openQuoteWithService(o?.value||"",qty);
+});
+document.getElementById("sendEstimate").addEventListener("click",()=>{
+  const o=calcService.options[calcService.selectedIndex], unit=Number(o?.dataset.price||0), total=urgent?unit*qty*1.25:unit*qty;
+  whatsapp(`Olá! Sou cliente da PixelUp Studio e gostaria de solicitar um orçamento.\n\nServiço: ${o?.value||"Outro"}\nQuantidade: ${qty}\nValor estimado: ${brl(total)}\nPrazo: ${urgent?"Urgente":"Prazo normal"}\nObservações: ${document.getElementById("calcObs").value||"Não informado"}\n\nGostaria de confirmar o orçamento.`);
+});
+updateCalc();
+
+document.getElementById("quoteForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const o=wanted.options[wanted.selectedIndex];
+  const msg=`Olá! Sou cliente da PixelUp Studio e gostaria de solicitar um orçamento.\n\nNome: ${document.getElementById("name").value}\nWhatsApp: ${document.getElementById("phone").value}\nE-mail: ${document.getElementById("email").value}\nEmpresa: ${document.getElementById("company").value||"Não informado"}\nServiço: ${o?.value||"Não informado"}\nQuantidade: ${document.getElementById("formQty").value||"1"}\nPrazo: ${document.getElementById("deadline").value}\nDescrição: ${document.getElementById("description").value||"Não informado"}\nReferência: ${document.getElementById("reference").value||"Não informado"}\n\nGostaria de confirmar o orçamento.`;
+  const fileName=document.getElementById("upload").files?.[0]?.name;
+  const msgWithFile=fileName ? (msg+"\nArquivo selecionado: "+fileName+"\nObservação: o arquivo deverá ser anexado manualmente no WhatsApp.") : msg;
+  document.getElementById("success").classList.add("show");
+  track("quote_submit",{service:o?.value||"not_set"});
+  whatsapp(msgWithFile);
+});
+
+const lightbox=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg"), lbTitle=document.getElementById("lbTitle"), lbCat=document.getElementById("lbCat");
+document.querySelectorAll(".portfolio-card").forEach(card=>{
+  const open=()=>{track("portfolio_view",{project:card.dataset.title,category:card.dataset.cat});lbImg.src=card.dataset.img;lbImg.alt=card.dataset.title;lbTitle.textContent=card.dataset.title;lbCat.textContent=card.dataset.cat;lightbox.classList.add("open");};
+  card.addEventListener("click",open);
+  card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}});
+});
+document.getElementById("lbClose").addEventListener("click",()=>lightbox.classList.remove("open"));
+lightbox.addEventListener("click",e=>{if(e.target===lightbox)lightbox.classList.remove("open")});
+document.getElementById("lbCta").addEventListener("click",()=>lightbox.classList.remove("open"));
+
+const chat=document.getElementById("chat"), body=document.getElementById("chatBody"), input=document.getElementById("chatInput");
+function bubble(t,user=false){const b=document.createElement("div");b.className="bubble"+(user?" user":"");b.textContent=t;body.appendChild(b);body.scrollTop=body.scrollHeight;}
+function normalizeMathText(text){
+  return text.toLowerCase()
+    .replace(/vírgula/g,",")
+    .replace(/,/g,".")
+    .replace(/(\d)\s*x\s*(\d)/g,"$1*$2")
+    .replace(/(\d)\s*×\s*(\d)/g,"$1*$2")
+    .replace(/(\d)\s*vezes\s*(\d)/g,"$1*$2")
+    .replace(/mais/g,"+")
+    .replace(/menos/g,"-")
+    .replace(/dividido por/g,"/")
+    .replace(/dividido/g,"/")
+    .replace(/vezes/g,"*")
+    .replace(/multiplicado por/g,"*")
+    .replace(/ao quadrado/g,"**2")
+    .replace(/ao cubo/g,"**3")
+    .replace(/por cento/g,"%")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function tryMath(question){
+  let q=normalizeMathText(question);
+
+  // "10% de 250", "15 por cento de 200"
+  let percentMatch=q.match(/^(\d+(?:\.\d+)?)\s*%\s*(?:de|do|da|em)\s*(\d+(?:\.\d+)?)$/);
+  if(percentMatch){
+    const p=Number(percentMatch[1]), base=Number(percentMatch[2]);
+    return {ok:true,text:`${p}% de ${base} = ${Number((base*p/100).toFixed(8)).toLocaleString("pt-BR")}`};
+  }
+
+  // "250 + 10%" as a common percentage increase request
+  let increase=q.match(/^(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)\s*%$/);
+  if(increase){
+    const base=Number(increase[1]), p=Number(increase[2]);
+    const result=base*(1+p/100);
+    return {ok:true,text:`${base} + ${p}% = ${Number(result.toFixed(8)).toLocaleString("pt-BR")}`};
+  }
+
+  // "250 - 10%"
+  let decrease=q.match(/^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*%$/);
+  if(decrease){
+    const base=Number(decrease[1]), p=Number(decrease[2]);
+    const result=base*(1-p/100);
+    return {ok:true,text:`${base} - ${p}% = ${Number(result.toFixed(8)).toLocaleString("pt-BR")}`};
+  }
+
+  q=q.replace(/^quanto\s+é\s+/,"").replace(/^calcule\s+/,"").replace(/^calcular\s+/,"");
+  q=q.replace(/^qual\s+é\s+/,"");
+  q=q.replace(/raiz quadrada de/g,"sqrt(");
+  q=q.replace(/raiz de/g,"sqrt(");
+
+  // Close sqrt phrases.
+  if(q.startsWith("sqrt(") && !q.endsWith(")")) q+=")";
+
+  // Convert ^ to exponentiation; support common factorial? leave factorial unsupported.
+  q=q.replace(/\^/g,"**");
+
+  // Only evaluate mathematical characters/functions.
+  if(!q || !/^[0-9+\-*/%().\s*]+$/.test(q.replace(/sqrt\(/g,"")) && !q.startsWith("sqrt(")){
+    // continue below
+  } else {
+    try{
+      const expr=q;
+      if(!/^[0-9+\-*/%().\s*]+$/.test(expr)) throw Error();
+      const value=Function('"use strict";return ('+expr+')')();
+      if(Number.isFinite(value)) {
+        return {ok:true,text:`Resultado: ${Number(value.toFixed(10)).toLocaleString("pt-BR")}`};
+      }
+    }catch{}
+  }
+
+  if(q.startsWith("sqrt(")){
+    try{
+      const n=Number(q.slice(5,-1));
+      if(Number.isFinite(n) && n>=0) return {ok:true,text:`√${n} = ${Number(Math.sqrt(n).toFixed(10)).toLocaleString("pt-BR")}`};
+    }catch{}
+  }
+  return {ok:false};
+}
+
+function localAI(q){
+  const original=q.trim();
+  const lower=q.toLowerCase();
+
+  // First priority: calculations.
+  const math=tryMath(original);
+  if(math.ok) return math.text;
+
+  // Pixel / website knowledge.
+  if(lower.includes("quem é você") || lower.includes("quem é vc") || lower.includes("seu nome"))
+    return "Meu nome é Pixel. Sou o assistente virtual da PixelUp Studio e posso responder dúvidas, fazer cálculos e ajudar a montar orçamentos.";
+
+  if(lower.includes("o que vocês fazem") || lower.includes("quais serviços") || lower.includes("serviços vocês"))
+    return "A PixelUp Studio trabalha com Social Media, Design Gráfico, Identidade Visual, Materiais Empresariais, Artes para Impressão, Edição de Imagens e Criação de Sites.";
+
+  if(lower.includes("post") && (lower.includes("preço")||lower.includes("valor")||lower.includes("custa")))
+    return "Post para Instagram/Facebook: a partir de R$ 25,00.";
+
+  if(lower.includes("story") && (lower.includes("preço")||lower.includes("valor")||lower.includes("custa")))
+    return "Story: a partir de R$ 20,00.";
+
+  if(lower.includes("carrossel"))
+    return "Carrossel até 5 páginas: a partir de R$ 60,00. Até 10 páginas: a partir de R$ 90,00.";
+
+  if(lower.includes("logo") || lower.includes("logotipo"))
+    return "Logotipo: a partir de R$ 150,00. Logo Premium: a partir de R$ 250,00. Identidade Visual: a partir de R$ 450,00.";
+
+  if(lower.includes("site") || lower.includes("loja virtual") || lower.includes("landing"))
+    return "Landing Page: a partir de R$ 350,00. Site Institucional: R$ 600,00. Site Profissional: R$ 900,00. Loja Virtual: R$ 1.500,00.";
+
+  if(lower.includes("pacote") || lower.includes("mensal") || lower.includes("social media"))
+    return "Pacotes Social Media: Start R$ 150/mês, Profissional R$ 280/mês e Premium R$ 450/mês. O Profissional é o mais popular.";
+
+  if(lower.includes("prazo"))
+    return "O prazo varia de acordo com o tipo e a complexidade do projeto. O prazo será informado junto ao orçamento.";
+
+  if(lower.includes("impress"))
+    return "Sim. A PixelUp Studio cria materiais preparados para impressão.";
+
+  if(lower.includes("referência"))
+    return "Sim. Você pode enviar links, @perfis e outras referências no formulário de orçamento.";
+
+  if(lower.includes("alterações"))
+    return "A quantidade de alterações é definida de acordo com cada serviço e orçamento.";
+
+  if(lower.includes("pagamento"))
+    return "As condições de pagamento serão informadas no orçamento antes do início do projeto.";
+
+  if(lower.includes("whatsapp") || lower.includes("telefone") || lower.includes("contato"))
+    return "O WhatsApp da PixelUp Studio é (81) 99144-0114. Você pode tocar no botão verde do WhatsApp no canto da página.";
+
+  if(lower.includes("instagram"))
+    return "O Instagram informado para o site é @arquivo_alpha1.";
+
+  if(lower.includes("orçamento"))
+    return "Posso fazer uma conta simples ou montar um orçamento detalhado. Use a aba Orçamento dentro do Pixel para adicionar vários serviços.";
+
+  if(lower.includes("como usar") || lower.includes("calculadora"))
+    return "Para contas, você pode escrever diretamente, por exemplo: 1x4, 25+30, 100/4, 10% de 500 ou 2^3. Também há uma calculadora na aba Calculadora.";
+
+  // Generic useful fallbacks.
+  if(lower.includes("bom dia") || lower.includes("boa tarde") || lower.includes("boa noite"))
+    return "Olá! Sou o Pixel. Como posso ajudar? Posso responder dúvidas, fazer cálculos ou montar um orçamento.";
+
+  if(lower.includes("obrigado") || lower.includes("obrigada"))
+    return "Por nada! Estou por aqui para ajudar.";
+
+  return "Posso responder perguntas sobre a PixelUp Studio, preços, serviços, prazos, contato e orçamento, além de fazer cálculos. Exemplos: “1x4”, “10% de 250”, “quanto custa um logo?” ou “qual o preço de um site?”.";
+}
+
+async function askAI(q){
+  // Para responder praticamente qualquer assunto, conecte aqui uma API de IA
+  // pelo seu backend. Nunca coloque uma chave secreta diretamente neste HTML.
+  if(typeof CONFIG!=="undefined" && CONFIG.AI_ENDPOINT){
+    try{
+      const r=await fetch(CONFIG.AI_ENDPOINT,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          message:q,
+          context:"Você é Pixel, assistente da PixelUp Studio. Responda em português do Brasil, seja claro e útil. Para preços, use somente os serviços e valores definidos no site. Para assuntos gerais, responda normalmente."
+        })
+      });
+      if(!r.ok) throw Error();
+      const d=await r.json();
+      return d.reply || d.message || localAI(q);
+    }catch{
+      return localAI(q);
+    }
+  }
+  return localAI(q);
+}
+async function sendChat(){
+  const q=input.value.trim();if(!q)return;
+  bubble(q,true);input.value="";
+  const t=document.createElement("div");t.className="bubble";t.textContent="Digitando…";body.appendChild(t);body.scrollTop=body.scrollHeight;
+  const reply=await askAI(q);t.remove();bubble(reply);
+}
+document.querySelector("[data-mobile-pixel]").addEventListener("click",()=>document.getElementById("chatOpen").click());
+document.getElementById("chatOpen").addEventListener("click",()=>chat.classList.toggle("open"));
+document.getElementById("chatClose").addEventListener("click",()=>chat.classList.remove("open"));
+document.getElementById("chatSend").addEventListener("click",sendChat);
+input.addEventListener("keydown",e=>{if(e.key==="Enter")sendChat()});
+document.querySelectorAll(".suggestions button").forEach(b=>b.addEventListener("click",()=>{input.value=b.textContent;sendChat()}));
+
+/* Abas do Pixel */
+document.querySelectorAll(".pixel-tab").forEach(tab=>{
+  tab.addEventListener("click",()=>{
+    document.querySelectorAll(".pixel-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".pixel-panel").forEach(p=>p.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("tab-"+tab.dataset.tab).classList.add("active");
+  });
+});
+
+/* Calculadora */
+const calcDisplay=document.getElementById("pixelCalcDisplay");
+const calcResult=document.getElementById("pixelCalcResult");
+document.querySelectorAll("[data-key]").forEach(btn=>{
+  btn.addEventListener("click",()=>calcDisplay.value += btn.dataset.key);
+});
+document.getElementById("pixelCalcClear").addEventListener("click",()=>{
+  calcDisplay.value="";calcResult.textContent="0";
+});
+document.getElementById("pixelCalcEqual").addEventListener("click",()=>{
+  const expr=calcDisplay.value.trim();
+  if(!expr)return;
+  if(!/^[0-9+\-*/().\s]+$/.test(expr)){calcResult.textContent="Conta inválida";return;}
+  try{
+    const value=Function('"use strict";return ('+expr+')')();
+    calcResult.textContent=Number.isFinite(value) ? Number(value.toFixed(2)).toLocaleString("pt-BR") : "Erro";
+  }catch{calcResult.textContent="Erro";}
+});
+calcDisplay.addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("pixelCalcEqual").click()});
+
+/* Orçamento detalhado */
+const budgetServices=SERVICES.flatMap(s=>s.items.map(i=>({name:i.name,price:i.price,category:s.name})));
+const budgetSelect=document.getElementById("pixelBudgetService");
+budgetSelect.innerHTML=budgetServices.map(i=>`<option value="${i.name}" data-price="${i.price}">${i.name}</option>`).join("")+
+  `<option value="Outro" data-price="0">Outro (sob consulta)</option>`;
+
+let detailedBudget=[];
+function renderBudget(){
+  const list=document.getElementById("pixelBudgetList");
+  if(!detailedBudget.length){
+    list.innerHTML='<div class="pixel-empty">Nenhum serviço adicionado ainda.</div>';
+  }else{
+    list.innerHTML=detailedBudget.map((item,index)=>`
+      <div class="pixel-item">
+        <div class="pixel-item-top"><b>${item.name}</b><button class="pixel-remove" data-remove="${index}">remover</button></div>
+        <div class="pixel-item-meta">${item.qty} × ${brl(item.unit)} = ${brl(item.subtotal)} ${item.urgent?"• urgente":""}</div>
+        ${item.note?`<div class="pixel-item-note">${item.note}</div>`:""}
+      </div>`).join("");
+    list.querySelectorAll("[data-remove]").forEach(btn=>btn.addEventListener("click",()=>{
+      detailedBudget.splice(Number(btn.dataset.remove),1);renderBudget();
+    }));
+  }
+  const subtotal=detailedBudget.reduce((a,i)=>a+i.subtotal,0);
+  const urgency=detailedBudget.filter(i=>i.urgent).reduce((a,i)=>a+i.subtotal*0.25,0);
+  document.getElementById("pixelBudgetSubtotal").textContent=brl(subtotal);
+  document.getElementById("pixelBudgetUrgency").textContent=brl(urgency);
+  document.getElementById("pixelBudgetTotal").textContent=brl(subtotal+urgency);
+}
+document.getElementById("pixelAddItem").addEventListener("click",()=>{
+  const o=budgetSelect.options[budgetSelect.selectedIndex];
+  const name=o?.value||"Outro";
+  const unit=Number(o?.dataset.price||0);
+  const qty=Math.max(1,Number(document.getElementById("pixelBudgetQty").value)||1);
+  const urgent=document.getElementById("pixelBudgetDeadline").value==="urgent";
+  const note=document.getElementById("pixelBudgetNote").value.trim();
+  detailedBudget.push({name,unit,qty,urgent,note,subtotal:unit*qty});
+  document.getElementById("pixelBudgetNote").value="";
+  document.getElementById("pixelBudgetQty").value="1";
+  renderBudget();
+});
+document.getElementById("pixelClearBudget").addEventListener("click",()=>{detailedBudget=[];renderBudget()});
+document.getElementById("pixelSendBudget").addEventListener("click",()=>{
+  if(!detailedBudget.length){
+    alert("Adicione pelo menos um serviço ao orçamento.");
+    return;
+  }
+  const subtotal=detailedBudget.reduce((a,i)=>a+i.subtotal,0);
+  const urgency=detailedBudget.filter(i=>i.urgent).reduce((a,i)=>a+i.subtotal*0.25,0);
+  const total=subtotal+urgency;
+  const lines=detailedBudget.map((i,n)=>`${n+1}. ${i.name} — ${i.qty} x ${brl(i.unit)} = ${brl(i.subtotal)}${i.urgent?" (urgente)":""}${i.note?" — "+i.note:""}`).join("\n");
+  whatsapp(`Olá! Sou cliente da PixelUp Studio e gostaria de solicitar um orçamento detalhado.\n\n${lines}\n\nSubtotal: ${brl(subtotal)}\nAcréscimo de urgência: ${brl(urgency)}\nTotal estimado: ${brl(total)}\n\nGostaria de confirmar o orçamento.`);
+});
+renderBudget();
+
+
+(function(){
+  const hint=document.getElementById("pixelHint");
+  const open=document.getElementById("chatOpen");
+  if(open && hint){
+    open.addEventListener("click",()=>{hint.style.display="none";});
+  }
+})();
+
+</script>
+</body>
+</html>
