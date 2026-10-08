@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const PORT = Number(process.env.PORT || 3000);
-const ROOT = path.join(__dirname, "public");
+const RAIZ = caminho.juntar(__dirname);
 const AI_API_URL = process.env.AI_API_URL || "";
 const AI_API_KEY = process.env.AI_API_KEY || "";
 const AI_MODEL = process.env.AI_MODEL || "";
