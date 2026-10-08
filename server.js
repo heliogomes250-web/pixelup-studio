@@ -1,6 +1,6 @@
 const http = require("node:http");
 const fs = require("node:fs");
-const path = require("node:path");
+const caminho = require("node:path");
 
 const PORT = Number(process.env.PORT || 3000);
 const RAIZ = caminho.juntar(__dirname);
