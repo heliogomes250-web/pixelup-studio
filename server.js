@@ -1,9 +1,8 @@
 const http = require("node:http");
 const fs = require("node:fs");
 const caminho = require("node:path");
-
 const PORT = Number(process.env.PORT || 3000);
-const RAIZ = caminho.juntar(__dirname);
+const RAIZ = caminho.join(__dirname);
 const AI_API_URL = process.env.AI_API_URL || "";
 const AI_API_KEY = process.env.AI_API_KEY || "";
 const AI_MODEL = process.env.AI_MODEL || "";
@@ -38,16 +37,18 @@ function send(res, status, type, body) {
 
 async function handleAI(req, res, body) {
   let data;
-  try { data = JSON.parse(body); } catch { return send(res,400,"application/json",JSON.stringify({error:"JSON inválido"})); }
+  try { data = JSON.parse(body); } 
+  catch { return send(res, 400, "application/json", JSON.stringify({error:"JSON inválido"})); }
+  
   const message = String(data.message || "").trim();
-  if (!message) return send(res,400,"application/json",JSON.stringify({error:"Mensagem vazia"}));
-
+  if (!message) return send(res, 400, "application/json", JSON.stringify({error:"Mensagem vazia"}));
+  
   if (!AI_API_URL || !AI_API_KEY) {
-    return send(res,200,"application/json",JSON.stringify({
+    return send(res, 200, "application/json", JSON.stringify({
       reply:"Estou no modo local. Posso tirar dúvidas sobre a PixelUp Studio e fazer cálculos. Para respostas gerais mais amplas, configure o servidor de IA."
     }));
   }
-
+  
   try {
     const payload = {
       model: AI_MODEL || undefined,
@@ -55,20 +56,23 @@ async function handleAI(req, res, body) {
         {role:"system", content:SYSTEM_PROMPT},
         {role:"user", content:message}
       ],
-      temperature:0.2
+      temperature: 0.2
     };
     if (!payload.model) delete payload.model;
-
+    
     const r = await fetch(AI_API_URL, {
-      method:"POST",
-      headers:{"Content-Type":"application/json","Authorization":"Bearer "+AI_API_KEY},
-      body:JSON.stringify(payload)
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Authorization": "Bearer " + AI_API_KEY},
+      body: JSON.stringify(payload)
     });
+    
     const text = await r.text();
-    if (!r.ok) return send(res,502,"application/json",JSON.stringify({error:"Falha no provedor de IA",detail:text.slice(0,300)}));
+    if (!r.ok) return send(res, 502, "application/json", JSON.stringify({error:"Falha no provedor de IA", detail: text.slice(0,300)}));
+    
     let out;
-    try { out = JSON.parse(text); } catch { return send(res,502,"application/json",JSON.stringify({error:"Resposta inválida do provedor"})); }
-
+    try { out = JSON.parse(text); } 
+    catch { return send(res, 502, "application/json", JSON.stringify({error:"Resposta inválida do provedor"})); }
+    
     const reply =
       out?.choices?.[0]?.message?.content ||
       out?.choices?.[0]?.text ||
@@ -76,45 +80,48 @@ async function handleAI(req, res, body) {
       out?.response ||
       out?.reply ||
       "Não consegui obter uma resposta agora.";
-
-    return send(res,200,"application/json",JSON.stringify({reply}));
+      
+    return send(res, 200, "application/json", JSON.stringify({reply}));
   } catch (err) {
-    return send(res,500,"application/json",JSON.stringify({error:"Erro ao consultar a IA"}));
+    return send(res, 500, "application/json", JSON.stringify({error:"Erro ao consultar a IA"}));
   }
 }
 
-function staticFile(req,res) {
+function staticFile(req, res) {
   let reqPath = decodeURIComponent(req.url.split("?")[0]);
   if (reqPath === "/") reqPath = "/index.html";
-  if (reqPath.includes("..")) return send(res,403,"text/plain; charset=utf-8","Acesso negado.");
-  const file = path.join(ROOT, reqPath);
-  fs.stat(file,(err,stat)=>{
-    if(err || !stat.isFile()) return send(res,404,"text/plain; charset=utf-8","Página não encontrada.");
-    const ext = path.extname(file).toLowerCase();
+  if (reqPath.includes("..")) return send(res, 403, "text/plain; charset=utf-8", "Acesso negado.");
+  
+  const file = caminho.join(RAIZ, reqPath);
+  fs.stat(file, (err, stat) => {
+    if (err || !stat.isFile()) return send(res, 404, "text/plain; charset=utf-8", "Página não encontrada.");
+    
+    const ext = caminho.extname(file).toLowerCase();
     const types = {
-      ".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",".js":"text/javascript; charset=utf-8",
-      ".json":"application/json; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".jpg":"image/jpeg",
-      ".jpeg":"image/jpeg",".png":"image/png",".ico":"image/x-icon"
+      ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
+      ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".webp": "image/webp", 
+      ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".ico": "image/x-icon"
     };
-    const cache = ext===".html" ? "no-cache" : "public, max-age=31536000, immutable";
-    res.writeHead(200,{"Content-Type":types[ext]||"application/octet-stream","Cache-Control":cache});
+    
+    const cache = ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable";
+    res.writeHead(200, {"Content-Type": types[ext] || "application/octet-stream", "Cache-Control": cache});
     fs.createReadStream(file).pipe(res);
   });
 }
 
-const server = http.createServer((req,res)=>{
-  if(req.method==="POST" && req.url.split("?")[0]==="/api/pixel"){
-    let body="", size=0;
-    req.on("data",chunk=>{
+const server = http.createServer((req, res) => {
+  if (req.method === "POST" && req.url.split("?")[0] === "/api/pixel") {
+    let body = "", size = 0;
+    req.on("data", chunk => {
       size += chunk.length;
-      if(size > MAX_BODY){req.destroy();return;}
+      if (size > MAX_BODY) { req.destroy(); return; }
       body += chunk.toString("utf8");
     });
-    req.on("end",()=>handleAI(req,res,body));
+    req.on("end", () => handleAI(req, res, body));
     return;
   }
-  if(req.method==="GET") return staticFile(req,res);
-  send(res,405,"text/plain; charset=utf-8","Método não permitido.");
+  if (req.method === "GET") return staticFile(req, res);
+  send(res, 405, "text/plain; charset=utf-8", "Método não permitido.");
 });
 
-server.listen(PORT,()=>console.log(`PixelUp Studio online em http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`PixelUp Studio online na porta ${PORT}`));
